@@ -6,16 +6,21 @@ def has_duplicates(lst):
     返回: bool - 如果有重复元素返回 True，否则返回 False
     """
     # 学生实现代码区域
-   
+    # 集合会自动去重，若原列表长度 > 集合长度，说明有重复
+    return len(lst) != len(set(lst))
+
 
 # 主程序 - 测试函数
 if __name__ == "__main__":
     # 学生需要提供测试用例
     test_cases = [
-        [1, 2, 3],          # 无重复
-        [1, 2, 2],          # 有重复
-        ["a", "b", "a"],    # 字符串重复
-        []                   # 空列表
+        [1, 2, 3],        # 无重复
+        [1, 2, 2],        # 有重复
+        ["a", "b", "a"],  # 字符串重复
+        []                # 空列表
     ]
-    
+
     # 测试每个用例，编写具体测试代码
+    for case in test_cases:
+        result = has_duplicates(case)
+        print(f"列表 {case} 是否有重复元素？{result}")
